@@ -1,0 +1,19 @@
+//leaftet
+
+.leaflet{
+  &-container  {
+    width: 100%;
+    height: 100vh
+  }
+  &-top {
+    top: auto !important;
+    bottom: 0;
+    margin-bottom: 10px;
+  }
+  &-control-zoom-in, &-control-zoom-out {
+    background-color: $yellow !important;
+  }
+  &-control-zoom-in:hover, &-control-zoom-out:hover {
+    background-color: $yellow-hover !important;
+  }
+}

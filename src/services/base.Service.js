@@ -8,7 +8,7 @@ const http = axios.create({
 http.interceptors.response.use(
   response => response,
   error => {
-    console.error(error);
+    // console.error(error);
     if (error.status === 403) {
       window.location = '/';
     } else {
@@ -17,5 +17,13 @@ http.interceptors.response.use(
   }
 )
 
+export const getRappersList = async _ => {
+  try {
+    const { data } = await http.get()
+    return data
+  } catch(error) {
+    // console.info('ERROR => ', error)
+  }
+}
 
 export default http;

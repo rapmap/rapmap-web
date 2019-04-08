@@ -1,0 +1,51 @@
+.rapperlist {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  flex-wrap: wrap;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  padding-top: $header-height;
+  z-index: 9999;
+  overflow-y: scroll;
+  background-color: $black;
+  transition: all .5s linear;
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 190px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px; 
+    color: $yellow;
+    background-color: $black-hover;
+    & > div {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & h2 {
+      margin: 5px 0 10px 0;
+      padding: 10px;
+      color: #000;
+      background-color: yellow;
+      transform: rotate(-10deg);
+      font-family: 'Pacifico', cursive;
+    }
+    & p {
+      margin: 5px 0 10px 0;
+      color: $grey
+    }
+  }
+}
