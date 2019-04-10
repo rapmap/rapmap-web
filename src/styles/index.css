@@ -102,7 +102,36 @@ a:hover {
     .header__burger img {
       width: 100%; }
 
+.infopopup {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .infopopup > div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url("../assets/img/rapdefault.jpg");
+    background-position: center;
+    background-size: 165px;
+    overflow: hidden; }
+  .infopopup img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
+  .infopopup h2 {
+    margin: 5px 0 10px 0;
+    padding: 10px;
+    color: #f5ef2d;
+    text-align: center;
+    transform: rotate(-10deg);
+    font-family: 'Pacifico', cursive;
+    font-size: 2em; }
+  .infopopup p {
+    margin: 5px 0 10px 0;
+    color: #fff; }
+
 .leaflet-container {
+  position: unset !important;
   width: 100%;
   height: 100vh; }
 
@@ -115,7 +144,23 @@ a:hover {
   background-color: #f5ef2d !important; }
 
 .leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover {
-  background-color: #c7c32f !important; }
+  background-color: #d2d269 !important; }
+
+.leaflet-popup-content {
+  width: auto !important; }
+
+.leaflet-popup-content-wrapper {
+  background-color: #000 !important;
+  border: 3px solid #d2d269; }
+
+.myclass {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: red; }
 
 .rapperlist {
   display: flex;

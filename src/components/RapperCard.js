@@ -7,7 +7,7 @@ const RapperCard = ({imageURL, name,}) => (
     <div>
       <img src={imageURL || Images.defaultrapper} alt={name} /> 
     </div>
-    {/* <p>{location}</p> */}
+    {/* <p>{city}</p> */}
   </li>
 )
 

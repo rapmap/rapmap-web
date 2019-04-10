@@ -1,5 +1,8 @@
 import React from 'react'
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import { Map, Marker, Popup, TileLayer, FeatureGroup } from 'react-leaflet'
+import MarkerClusterGroup from 'react-leaflet-markercluster';
+
+// import { EditControl } from "react-leaflet-draw"
 
 import L from 'leaflet';
 
@@ -32,24 +35,39 @@ class MyMap extends React.Component {
     const { rapperList } = this.props
     console.log('props', this.props)
     return (
-      <Map center={position} zoom={3}>
+      <Map className="markercluster-map" center={position} zoom={3} maxZoom={15}>
+
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+          url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}"
+          attribution= 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          ext= 'png'
         />
+        <MarkerClusterGroup>
         {
-          rapperList.map(({ name, location }, index) => {
-            if(index < 5) {
+          rapperList.map(({ imageURL, name, location, genre, bio }, index) => {
+            // if(index < 5) {
               return (
+                
                 <Marker key={index} position={this.getRightCoordinates(location)}> {/* Ñapa! */}
                   <Popup>
-                    <p>{name}</p>
+                    <div class="infopopup">
+                    <h2>{name}</h2>
+                      <div>
+                        <img src={imageURL} alt='.' />
+                      </div>
+                      <p>{genre}</p>
+                      {/* <p>{bio}</p> */}
+                    </div>
                   </Popup>
                 </Marker>
+               
+                
               )
             }
-          })
+          // }
+          )
         }
+        </MarkerClusterGroup>
         {/* {this.props.rapperList.map((rapper, index) => {
           return (
             <Marker key={index} position={rapper.location.coordinates}>

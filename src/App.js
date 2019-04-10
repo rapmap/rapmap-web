@@ -5,6 +5,7 @@ import Header from './components/Header';
 import RapperList from './components/RapperList';
 import { getRappersList } from './services/base.Service'
 
+
 class App extends Component {
 
   state = {
@@ -15,13 +16,16 @@ class App extends Component {
   componentDidMount() {
     getRappersList()
       .then(rapperList => this.setState({ rapperList }))
+      
   }
 
   toggleListVisibility = () => this.setState({ rapperListVisibility: !this.state.rapperListVisibility })
 
   render() {
+    
     const { rapperList, rapperListVisibility } = this.state
     return (
+      
       <> 
       {/* <Helmet>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"/>
