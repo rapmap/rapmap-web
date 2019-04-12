@@ -29,9 +29,9 @@ footer, hgroup, menu, nav {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
+  position: relative;
   line-height: 1;
-  color: #000;
-  font-family: "Playfair Display"; }
+  color: #000;}
 
 ol, ul {
   list-style: none; }
@@ -86,4 +86,5 @@ a:hover {
 @import "map";
 @import "asiderapper";
 @import "rapperlist";
+@import "mainRapMap"
  

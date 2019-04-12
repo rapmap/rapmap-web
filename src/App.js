@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Helmet } from "react-helmet";
 import MyMap from './components/MyMap';
 import Header from './components/Header';
+import ThugLife from './components/ThugLife'
 import RapperList from './components/RapperList';
 import { getRappersList } from './services/base.Service'
+import MainRapMap from './components/MainRapMap';
 
 
 class App extends Component {
@@ -11,12 +12,12 @@ class App extends Component {
   state = {
     rapperList: [],
     rapperListVisibility: false,
+    konamiCode: []
   }
 
   componentDidMount() {
     getRappersList()
       .then(rapperList => this.setState({ rapperList }))
-      
   }
 
   toggleListVisibility = () => this.setState({ rapperListVisibility: !this.state.rapperListVisibility })
@@ -26,16 +27,14 @@ class App extends Component {
     const { rapperList, rapperListVisibility } = this.state
     return (
       
-      <> 
-      {/* <Helmet>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"/>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
-      </Helmet> */}
-      <div className="App">
-        <Header toggleListVisibility={this.toggleListVisibility} />
-        <RapperList {...this.state} />
-        <MyMap rapperList={rapperList} />
-      </div>
+      <>
+        <div className="App">
+          <MainRapMap />
+          <Header toggleListVisibility={this.toggleListVisibility} />
+          <RapperList {...this.state} />
+          <MyMap rapperList={rapperList} />
+          <ThugLife />
+        </div>
       </>
     );
   }

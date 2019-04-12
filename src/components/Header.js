@@ -8,9 +8,8 @@ rapperBurgerVisibility ? 'visible-close' : ''
 const Header = ({ toggleListVisibility, rapperBurgerVisibility }) => (
   <header className="header">
     <div className="header__logo">
-      <img src="" alt="rapmap"/>
+      <img src={Images.logo} alt="rapmap"/>
     </div>
-    <Search/>
     <div onClick={toggleListVisibility} className="header__burger">
       <img src={Images.burger} alt="burger"/>
     </div>

@@ -12,7 +12,6 @@
     background-position: center;
     background-size: 165px;
     overflow: hidden;
-
   }
   img {
     object-fit: cover;
@@ -36,6 +35,35 @@
   }
 }
 
+.bio {
+  &:before {
+    content: 'Bio: ';
+    font: {
+      size: 1.2em;
+      weight: bold;
+    }
+    color: $blue;
+  }
+}
+
+.genre {
+  &:before {
+    content: 'Genre: ';
+    font: {
+      size: 1.2em;
+      weight: bold;
+    }
+    color: $blue;
+  }
+}
+
+.info {
+  font-size: 1.3em !important;
+  align-self: flex-end;
+  a {
+    color: $yellow !important;
+  }
+}
 
 .leaflet{
   &-container  {
@@ -60,6 +88,9 @@
   &-popup-content-wrapper {
     background-color: #000 !important;
     border: 3px solid $yellow-hover
+  }
+  &-popup {
+    width: 320px;
   }
   // &-popup {
   //   position: fixed !important;

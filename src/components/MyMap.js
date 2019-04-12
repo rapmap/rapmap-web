@@ -33,18 +33,17 @@ class MyMap extends React.Component {
   render () {
     const position = [this.state.lat, this.state.lng]
     const { rapperList } = this.props
-    console.log('props', this.props)
+    // console.log('props', this.props)
     return (
       <Map className="markercluster-map" center={position} zoom={3} maxZoom={15}>
 
         <TileLayer
           url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}"
-          attribution= 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           ext= 'png'
         />
         <MarkerClusterGroup>
         {
-          rapperList.map(({ imageURL, name, location, genre, bio }, index) => {
+          rapperList.map(({ imageURL, name, location, genre, bio, artistWikiHref  }, index) => {
             // if(index < 5) {
               return (
                 
@@ -55,8 +54,9 @@ class MyMap extends React.Component {
                       <div>
                         <img src={imageURL} alt='.' />
                       </div>
-                      <p>{genre}</p>
-                      {/* <p>{bio}</p> */}
+                      <p className="genre">{genre}</p>
+                      <p className="bio">{bio}</p>
+                      <p className="info"><a href={`https://en.wikipedia.org/wiki/${artistWikiHref}`} target="_blank">+ info...</a></p>
                     </div>
                   </Popup>
                 </Marker>
