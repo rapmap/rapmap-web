@@ -336,3 +336,13 @@ a:hover {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+#konami {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: none;
+  z-index: 99999; }
+
+.done {
+  display: block !important; }

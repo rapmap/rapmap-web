@@ -29,7 +29,7 @@ class App extends Component {
       
       <>
         <div className="App">
-          <MainRapMap />
+          {/* <MainRapMap /> */}
           <Header toggleListVisibility={this.toggleListVisibility} />
           <RapperList {...this.state} />
           <MyMap rapperList={rapperList} />
